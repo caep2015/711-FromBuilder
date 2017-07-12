@@ -96,5 +96,28 @@ let formData = [
 
 
 // -------- Your Code Goes Below this Line --------
+//let fields = document.querySelector('#fields');
+//for(let i=0; i<formData.length; i++) {
 
+let fields = document.querySelector("#fields");
 
+for (i = 0; i < formData.length; i++){
+  let input = document.createElement("input");
+  input.setAttribute("type", formData[i].type);
+  input.setAttribute("placeholder", formData[i].label);
+  input.setAttribute("id", formData[i].id);
+  input.setAttribute("fa-", formData[i].icon);
+  fields.appendChild(input);
+
+  if (formData[i].options.length > 0){
+    let dropdown = document.createElement("select");
+  for (a = 0; a < formData[i].options.length; a++){
+
+    let dropdownOption = document.createElement("option");
+    dropdownOption.setAttribute("value", formData[i].options[a].value);
+    dropdownOption.innerHTML = formData[i].options[a].label;
+    dropdown.appendChild(dropdownOption);
+    fields.appendChild(dropdown);
+    }
+  }
+}
