@@ -36,8 +36,7 @@ let formData = [
     "label": "Select Language",
     "id": "user-language",
     "icon": "",
-    "options": [
-      {
+    "options": [{
         "label": "English",
         "value": "EN"
       },
@@ -85,39 +84,58 @@ let formData = [
 // HINTS:
 // As you can see, we access the first element in the array
 // with [0] and then grab the property "label" using the "." operator
-( function(){
-  // Select the first element from the array
-  let first = formData[ 0 ];
-  // Log the first object
-  console.log( first );
-  // Log the string "First Name"
-  console.log( first.label );
-} )();
+//( function(){
+// Select the first element from the array
+// let first = formData[ 0 ];
+// Log the first object
+// console.log( first );
+// Log the string "First Name"
+// console.log( first.label );
+// } )();
 
 
 // -------- Your Code Goes Below this Line --------
-//let fields = document.querySelector('#fields');
-//for(let i=0; i<formData.length; i++) {
 
-let fields = document.querySelector("#fields");
+var fields = document.querySelector("#fields");
 
-for (i = 0; i < formData.length; i++){
-  let input = document.createElement("input");
-  input.setAttribute("type", formData[i].type);
-  input.setAttribute("placeholder", formData[i].label);
-  input.setAttribute("id", formData[i].id);
-  input.setAttribute("fa-", formData[i].icon);
-  fields.appendChild(input);
+for (i = 0; i < formData.length; i++) {
+/*
+  var spanTag = document.createElement('span');
+  spanTag.setAttribute('class', 'fa ' + formData[i].icon);
+  fields.appendChild(spanTag);  */
 
-  if (formData[i].options.length > 0){
-    let dropdown = document.createElement("select");
-  for (a = 0; a < formData[i].options.length; a++){
+  if (formData[i].type === 'text' || formData[i].type === 'email' || formData[i].type === 'tel') {
 
-    let dropdownOption = document.createElement("option");
-    dropdownOption.setAttribute("value", formData[i].options[a].value);
-    dropdownOption.innerHTML = formData[i].options[a].label;
-    dropdown.appendChild(dropdownOption);
-    fields.appendChild(dropdown);
+    var formField = document.createElement('input');
+    formField.setAttribute('type', formData[i].type);
+    formField.setAttribute('id', formData[i].id);
+    formField.setAttribute('name', formData[i].id);
+    formField.placeholder = formData[i].label;
+    fields.appendChild(formField);
+
+
+  } else if (formData[i].type === 'select') {
+
+    var selectField = document.createElement('select');
+    selectField.setAttribute('type', formData[i].type);
+    selectField.setAttribute('id', formData[i].id);
+    fields.appendChild(selectField);
+
+    for (var p = 0; p < (formData[4].options).length; p++) {
+      var optionsList = document.createElement('option');
+      optionsList.textContent = (formData[4].options[p].label);
+      optionsList.value = (formData[4].options[p].value);
+      selectField.appendChild(optionsList);
     }
-  }
+  } else if (formData[i].type === 'textarea') {
+
+    var textField = document.createElement('textarea');
+    textField.setAttribute('type', formData[i].type);
+    textField.setAttribute('id', formData[i].id);
+    textField.placeholder = formData[i].label;
+    fields.appendChild(textField);
+  };
+
 }
+
+console.log(fields);
