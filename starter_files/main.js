@@ -103,6 +103,9 @@ for (i = 0; i < formData.length; i++) {
   var spanTag = document.createElement('span');
   spanTag.setAttribute('class', 'fa ' + formData[i].icon);
   fields.appendChild(spanTag);  */
+  var spanTag = document.createElement('span');
+  spanTag.className = "fa " + formData[i].icon + " icontext";
+  fields.appendChild(spanTag);  
 
   if (formData[i].type === 'text' || formData[i].type === 'email' || formData[i].type === 'tel') {
 
