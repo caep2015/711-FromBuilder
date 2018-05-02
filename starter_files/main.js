@@ -104,7 +104,7 @@ for (i = 0; i < formData.length; i++) {
   spanTag.setAttribute('class', 'fa ' + formData[i].icon);
   fields.appendChild(spanTag);  */
   var spanTag = document.createElement('span');
-  spanTag.className = "fa " + formData[i].icon + " icontext";
+  spanTag.className = "fa " + formData[i].icon + " icon";
   fields.appendChild(spanTag);  
 
   if (formData[i].type === 'text' || formData[i].type === 'email' || formData[i].type === 'tel') {
@@ -137,6 +137,10 @@ for (i = 0; i < formData.length; i++) {
     textField.setAttribute('id', formData[i].id);
     textField.placeholder = formData[i].label;
     fields.appendChild(textField);
+    
+    var spanTag = document.createElement('span');
+    spanTag.className = "fa " + formData[i].icon + " icontext";
+    fields.appendChild(spanTag);  
   };
 
 }
