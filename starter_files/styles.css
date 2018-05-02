@@ -58,25 +58,20 @@
   font-size: 15px;
 }
 
-span {
-  margin: 2%;
-  margin-left: 0;
-  color: #inherit;
-} 
-
-span {
-  position: relative;
-  border: solid 1px #bbb;
-  padding: 3px 5px 5px 25px;
+.fa {
+    color: gray;
+    padding: 0 0 0 10px;
 }
-span input {
-  border: none;
-} 
 
-span:before {
-  content: '\f007';
-  position: absolute;
-  left: 5px;
-  font-family: fontAwesome;
-  color: #7A7B7C;
-} 
+.icon {
+    text-align: left;
+    position: relative;
+    margin: -35px 0 20px 25px;
+}
+
+.icontext {
+    text-align: left;
+    position: relative;
+    margin: -75px 0 60px 25px;
+}
+
