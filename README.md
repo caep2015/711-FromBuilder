@@ -3,7 +3,7 @@ This project includes parsing through an array of data and appending it to the D
 
 ---
 
-### View the finished project: https://htmlpreview.github.io/?https://github.com/carlotapearl/Form-Builder/blob/master/starter_files/index.html
+### View the finished project: https://tinyurl.com/y94nqe4j
 
 ---
 
